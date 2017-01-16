@@ -1,0 +1,34 @@
+// @flow
+
+type FirebaseDatabase = Object
+
+type Firebase = {
+  database: ()=>FirebaseDatabase
+}
+
+class FirebaseProvider extends React$Component<void, { firebase: Firebase, children?: any }, void> { };
+
+type Null = null | void;
+
+type MapDbToProps<FDB, OP: Object, FP: Object> = (firebaseDb: FDB, ownProps: OP) => FP | MapDbToProps<FDB, OP, FP>;
+
+type StatelessComponent<P> = (props: P) => ?React$Element<any>;
+
+class ConnectedComponent<OP, P, Def, St> extends React$Component<void, OP, void> {
+  props: OP;
+  state: void;
+}
+
+type ConnectedComponentClass<OP, P, Def, St> = Class<ConnectedComponent<OP, P, Def, St>>;
+
+type Connector<OP, P> = {
+  (component: StatelessComponent<P>): ConnectedComponentClass<OP, P, void, void>;
+  <Def, St>(component: Class<React$Component<Def, P, St>>): ConnectedComponentClass<OP, P, Def, St>;
+}
+
+type FirebaseConnect<FB, OP, FDB, FP> = (mapDbToProps?: MapDbToProps<FDB, OP, FP>) => Connector<OP, $Supertype<FDB & { firebase: FB } & OP>>
+
+declare module.exports: {
+  FirebaseProvider: FirebaseProvider,
+  firebaseConnect: FirebaseConnect<Firebase, Object, FirebaseDatabase, Object>,
+}
