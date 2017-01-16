@@ -1,6 +1,6 @@
 # firebase-react
 
-Connect firebase queries to react props. Supports lists of queries grouped into a single prop, allowing you to circumvent some Firebase query limitations.
+Connect firebase queries to react props. Supports lists of queries grouped into a single prop, allowing you to easily circumvent some Firebase query limitations.
 
 Uses a simple HOC API inspired by [react-redux](https://github.com/reactjs/react-redux).
 
@@ -48,7 +48,7 @@ const Dinosaurs = ({ shortDinosaurs, tallDinosaurs, shortAndTallDinosaurs }) => 
   )
 }
 
-export default firebaseConnect((props, db) => ({
+export default firebaseConnect((db, props) => ({
   // dinos less than 5m tall
   shortDinosaurs: db.ref('dinosaurs').orderByChild('height').endAt(5),
   // dinos greater than 25m tall

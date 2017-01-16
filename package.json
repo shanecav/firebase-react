@@ -1,8 +1,13 @@
 {
   "name": "firebase-react",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Connect firebase queries to react props with a simple HOC API",
-  "main": "index.js",
+  "main": "lib/index.js",
+  "files": [
+    "dist",
+    "lib",
+    "src"
+  ],
   "scripts": {
     "test": "jest --notify",
     "clean": "rimraf lib dist",
