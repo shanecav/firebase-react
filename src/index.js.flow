@@ -6,8 +6,6 @@ type Firebase = {
   database: ()=>FirebaseDatabase
 }
 
-class FirebaseProvider extends React$Component<void, { firebase: Firebase, children?: any }, void> { };
-
 type Null = null | void;
 
 type MapDbToProps<FDB, OP: Object, FP: Object> = (firebaseDb: FDB, ownProps: OP) => FP | MapDbToProps<FDB, OP, FP>;
@@ -29,6 +27,6 @@ type Connector<OP, P> = {
 type FirebaseConnect<FB, OP, FDB, FP> = (mapDbToProps?: MapDbToProps<FDB, OP, FP>) => Connector<OP, $Supertype<FDB & { firebase: FB } & OP>>
 
 declare module.exports: {
-  FirebaseProvider: FirebaseProvider,
+  FirebaseProvider: ReactClass<{}>,
   firebaseConnect: FirebaseConnect<Firebase, Object, FirebaseDatabase, Object>,
 }
