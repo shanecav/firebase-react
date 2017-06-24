@@ -2,7 +2,11 @@
 
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { map, values, merge, range, pick } from 'ramda'
+import map from 'ramda/src/map'
+import values from 'ramda/src/values'
+import merge from 'ramda/src/merge'
+import range from 'ramda/src/range'
+import pick from 'ramda/src/pick'
 
 import handleQueries from '../utils/handle-queries'
 

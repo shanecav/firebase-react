@@ -1,6 +1,6 @@
 // @flow
 
-import { forEachObjIndexed } from 'ramda'
+import forEachObjIndexed from 'ramda/src/forEachObjIndexed'
 
 import type { Queries } from '../components/firebaseConnect'
 
