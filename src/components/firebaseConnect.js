@@ -1,6 +1,7 @@
 // @flow
 
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import { map, values, merge, range, pick } from 'ramda'
 
 import handleQueries from '../utils/handle-queries'

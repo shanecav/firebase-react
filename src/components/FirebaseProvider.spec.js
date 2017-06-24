@@ -1,5 +1,6 @@
 import '../../test/jsdom-setup'
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import { shallow, mount } from 'enzyme'
 
 import FirebaseProvider from './FirebaseProvider'
