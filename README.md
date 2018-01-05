@@ -14,7 +14,7 @@ Alternatively:
 
 ## Usage
 
-Basic usage example below (better docs and examples coming soon):
+Basic usage example below:
 
 ```js
 // Dinosaurs.js
